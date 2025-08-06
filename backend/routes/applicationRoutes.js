@@ -4,7 +4,8 @@ import {
     getMyApplications,
     getApplicationsForRecruiter,
     getAllApplications,
-    updateApplicationStatus
+    updateApplicationStatus,
+    getApplicationById 
 } from '../controllers/applicationController.js';
 
 import upload from '../middleware/uploadMiddleware.js';
@@ -22,5 +23,7 @@ router.get('/recruiter', protect, authorizeRoles('recruiter'), getApplicationsFo
 router.get('/admin', protect, authorizeRoles('admin'), getAllApplications);
 
 router.patch('/:id/status', protect, authorizeRoles('admin', 'recruiter'), updateApplicationStatus);
+
+router.get('/:id', protect, authorizeRoles('admin', 'recruiter', 'job_seeker'), getApplicationById);
 
 export default router;

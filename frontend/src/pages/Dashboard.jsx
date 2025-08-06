@@ -64,7 +64,7 @@ const Dashboard = () => {
                         <h3 className="text-xl font-semibold text-indigo-700 mb-2">View Applications</h3>
                         <p className="text-gray-600 mb-4">Check who has applied to your job listings.</p>
                         <button
-                            onClick={() => navigate('/dashboard/applications')}
+                            onClick={() => navigate('/manage-applications')}
                             className="text-sm bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
                         >
                             View Applicants

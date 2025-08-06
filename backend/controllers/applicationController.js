@@ -70,3 +70,29 @@ export const updateApplicationStatus = async (req, res) => {
         res.status(500).json({ message: 'Error updating application status' });
     }
 };
+
+
+
+// Get application details by ID
+export const getApplicationById = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const application = await Application.findById(id)
+            .populate('jobId')
+            .populate('userId');
+
+        if (!application) {
+            return res.status(404).json({ message: 'Application not found' });
+        }
+
+        // Optional: restrict access for candidates (only their own applications)
+        if (req.user.role === 'job_seeker' && application.userId._id.toString() !== req.user._id.toString()) {
+            return res.status(403).json({ message: 'Access denied' });
+        }
+
+        res.json(application);
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching application details', error: err.message });
+    }
+};

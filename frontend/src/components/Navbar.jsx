@@ -27,7 +27,7 @@ const Navbar = () => {
   }, []);
 
   const navLinkStyles =
-    'text-sm font-medium text-slate-700 hover:text-indigo-600 transition';
+    'block text-sm font-medium text-slate-700 hover:text-indigo-600 transition';
 
   return (
     <nav
@@ -52,6 +52,10 @@ const Navbar = () => {
                 {user.email}{' '}
                 <span className="text-xs text-slate-500">({user.role})</span>
               </span>
+
+              <NavLink to="/" className={navLinkStyles}>
+                Home
+              </NavLink>
 
               <NavLink to="/jobs" className={navLinkStyles}>
                 Jobs
@@ -81,6 +85,9 @@ const Navbar = () => {
             </>
           ) : (
             <>
+              <NavLink to="/" className={navLinkStyles}>
+                Home
+              </NavLink>
               <NavLink to="/login" className={navLinkStyles}>
                 Login
               </NavLink>
@@ -110,14 +117,15 @@ const Navbar = () => {
                 <span className="text-xs text-slate-500">({user.role})</span>
               </div>
 
-              <Link
-                to="/jobs"
-                className={navLinkStyles}
-                onClick={() => setMenuOpen(false)}
-              >
+              <Link to="/" className={navLinkStyles} onClick={() => setMenuOpen(false)}>
+                Home
+              </Link>
+
+              <Link to="/jobs" className={navLinkStyles} onClick={() => setMenuOpen(false)}>
                 Jobs
               </Link>
 
+              {/* Role-based links */}
               {user.role === 'job_seeker' && (
                 <Link
                   to="/my-applications"
@@ -156,18 +164,13 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link
-                to="/login"
-                className={navLinkStyles}
-                onClick={() => setMenuOpen(false)}
-              >
+              <Link to="/" className={navLinkStyles} onClick={() => setMenuOpen(false)}>
+                Home
+              </Link>
+              <Link to="/login" className={navLinkStyles} onClick={() => setMenuOpen(false)}>
                 Login
               </Link>
-              <Link
-                to="/register"
-                className={navLinkStyles}
-                onClick={() => setMenuOpen(false)}
-              >
+              <Link to="/register" className={navLinkStyles} onClick={() => setMenuOpen(false)}>
                 Register
               </Link>
             </>

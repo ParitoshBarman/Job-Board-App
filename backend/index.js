@@ -1,12 +1,12 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import cors from 'cors';
+const express = require('express');
+const dotenv = require('dotenv');
+const cors = require('cors');
 
-import jobRoutes from './routes/jobRoutes.js';
-import applicationRoutes from './routes/applicationRoutes.js';
-import authRoutes from './routes/authRoutes.js';
+const jobRoutes = require('./routes/jobRoutes');
+const applicationRoutes = require('./routes/applicationRoutes');
+const authRoutes = require('./routes/authRoutes');
 
-import connectDB from './config/db.js';
+const connectDB = require('./config/db');
 
 dotenv.config();
 connectDB();

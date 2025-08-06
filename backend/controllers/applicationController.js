@@ -1,8 +1,8 @@
-import Application from '../models/Application.js';
-import Job from '../models/Job.js';
+const Application = require('../models/Application');
+const Job = require('../models/Job');
 
 // Submit application
-export const applyToJob = async (req, res) => {
+const applyToJob = async (req, res) => {
     const { name, email } = req.body;
     const { jobId } = req.params;
     const resume = req.file ? req.file.path : '';
@@ -23,7 +23,7 @@ export const applyToJob = async (req, res) => {
 };
 
 // Get applications for logged-in candidate
-export const getMyApplications = async (req, res) => {
+const getMyApplications = async (req, res) => {
     try {
         const applications = await Application.find({ userId: req.user._id }).populate('jobId');
         res.json(applications);
@@ -33,7 +33,7 @@ export const getMyApplications = async (req, res) => {
 };
 
 // Recruiter gets applications for jobs they posted
-export const getApplicationsForRecruiter = async (req, res) => {
+const getApplicationsForRecruiter = async (req, res) => {
     try {
         const jobs = await Job.find({ postedBy: req.user._id });
         const jobIds = jobs.map(job => job._id);
@@ -49,7 +49,7 @@ export const getApplicationsForRecruiter = async (req, res) => {
 };
 
 // Admin gets all applications
-export const getAllApplications = async (req, res) => {
+const getAllApplications = async (req, res) => {
     try {
         const applications = await Application.find().populate('jobId').populate('userId');
         res.json(applications);
@@ -59,7 +59,7 @@ export const getAllApplications = async (req, res) => {
 };
 
 // Update application status (recruiter/admin only)
-export const updateApplicationStatus = async (req, res) => {
+const updateApplicationStatus = async (req, res) => {
     const { id } = req.params;
     const { status } = req.body;
 
@@ -74,7 +74,7 @@ export const updateApplicationStatus = async (req, res) => {
 
 
 // Get application details by ID
-export const getApplicationById = async (req, res) => {
+const getApplicationById = async (req, res) => {
     const { id } = req.params;
 
     try {
@@ -96,3 +96,5 @@ export const getApplicationById = async (req, res) => {
         res.status(500).json({ message: 'Error fetching application details', error: err.message });
     }
 };
+
+module.exports = { applyToJob, getMyApplications, getApplicationsForRecruiter, getAllApplications, updateApplicationStatus, getApplicationById }

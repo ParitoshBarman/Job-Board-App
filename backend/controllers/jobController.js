@@ -1,7 +1,7 @@
-import Job from '../models/Job.js';
+const Job = require('../models/Job');
 
 // GET /api/jobs?keyword=dev&location=delhi
-export const getJobs = async (req, res) => {
+const getJobs = async (req, res) => {
     const { keyword = '', location = '' } = req.query;
 
     const keywordRegex = new RegExp(keyword, 'i');
@@ -42,7 +42,7 @@ export const getJobs = async (req, res) => {
 
 
 
-export const createJob = async (req, res) => {
+const createJob = async (req, res) => {
     const { title, company, location, type, description, requirements, salary } = req.body;
 
     if (!title || !company || !location || !type || !description || !requirements || !salary) {
@@ -68,7 +68,7 @@ export const createJob = async (req, res) => {
 };
 
 
-export const updateJob = async (req, res) => {
+const updateJob = async (req, res) => {
     try {
         const updated = await Job.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
@@ -85,7 +85,7 @@ export const updateJob = async (req, res) => {
     }
 };
 
-export const deleteJob = async (req, res) => {
+const deleteJob = async (req, res) => {
     try {
         const deleted = await Job.findByIdAndDelete(req.params.id);
 
@@ -100,7 +100,7 @@ export const deleteJob = async (req, res) => {
 };
 
 
-export const getJobById = async (req, res) => {
+const getJobById = async (req, res) => {
     try {
         const job = await Job.findById(req.params.id);
         if (!job) return res.status(404).json({ message: 'Job not found' });
@@ -109,3 +109,6 @@ export const getJobById = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
+
+
+module.exports = { getJobs, createJob, updateJob, deleteJob, getJobById }

@@ -1,16 +1,16 @@
-import express from 'express';
-import {
+const express = require('express');
+const {
     applyToJob,
     getMyApplications,
     getApplicationsForRecruiter,
     getAllApplications,
     updateApplicationStatus,
-    getApplicationById 
-} from '../controllers/applicationController.js';
+    getApplicationById
+} = require('../controllers/applicationController');
 
-import upload from '../middleware/uploadMiddleware.js';
-import protect from '../middleware/authMiddleware.js';
-import authorizeRoles from '../middleware/roleMiddleware.js';
+const upload = require('../middleware/uploadMiddleware');
+const protect = require('../middleware/authMiddleware');
+const authorizeRoles = require('../middleware/roleMiddleware');
 
 const router = express.Router();
 
@@ -26,4 +26,4 @@ router.patch('/:id/status', protect, authorizeRoles('admin', 'recruiter'), updat
 
 router.get('/:id', protect, authorizeRoles('admin', 'recruiter', 'job_seeker'), getApplicationById);
 
-export default router;
+module.exports = router;

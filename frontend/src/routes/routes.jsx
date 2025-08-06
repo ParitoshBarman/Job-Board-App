@@ -9,6 +9,10 @@ import Register from '../pages/Register';
 import Dashboard from '../pages/Dashboard';
 import Jobs from '../pages/Jobs';
 import JobDetails from '../pages/JobDetails';
+import ApplicationDetails from '../pages/ApplicationDetails';
+import ManageApplications from '../pages/ManageApplications';
+import MyApplications from '../pages/MyApplications';
+
 
 
 // Protected Route
@@ -42,6 +46,39 @@ const AppRoutes = () => {
                     </ProtectedRoute>
                 }
             />
+
+
+            {/* Candidate: View Their Applications */}
+            <Route
+                path="/my-applications"
+                element={
+                    <ProtectedRoute allowedRoles={['job_seeker']}>
+                        <MyApplications />
+                    </ProtectedRoute>
+                }
+            />
+
+            {/* Recruiter/Admin: Manage All Applications */}
+            <Route
+                path="/manage-applications"
+                element={
+                    <ProtectedRoute allowedRoles={['admin', 'recruiter']}>
+                        <ManageApplications />
+                    </ProtectedRoute>
+                }
+            />
+
+            {/* Shared View: Application Details (both recruiter and candidate can see) */}
+            <Route
+                path="/application/:id"
+                element={
+                    <ProtectedRoute allowedRoles={['admin', 'recruiter', 'job_seeker']}>
+                        <ApplicationDetails />
+                    </ProtectedRoute>
+                }
+            />
+
+
 
             {/* 404 fallback */}
             <Route path="*" element={<Navigate to={user ? '/' : '/login'} />} />

@@ -9,6 +9,14 @@ export const fetchRecruiterApplications = createAsyncThunk(
         return res.data;
     }
 );
+// Fetch all applications for admin
+export const fetchAdminApplications = createAsyncThunk(
+    'applications/fetchAdmin',
+    async () => {
+        const res = await axiosInstance.get('/apply/admin?admin=true');
+        return res.data;
+    }
+);
 
 // Update application status
 export const updateApplicationStatus = createAsyncThunk(
@@ -53,6 +61,19 @@ const applicationSlice = createSlice({
                 state.applications = action.payload;
             })
             .addCase(fetchRecruiterApplications.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message;
+            })
+            // same for admin
+            .addCase(fetchAdminApplications.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(fetchAdminApplications.fulfilled, (state, action) => {
+                state.loading = false;
+                state.applications = action.payload;
+            })
+            .addCase(fetchAdminApplications.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message;
             })

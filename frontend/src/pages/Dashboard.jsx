@@ -13,7 +13,7 @@ import {
 } from 'chart.js';
 
 import JobFormModal from '../components/JobFormModal';
-import { fetchRecruiterApplications } from '../redux/applicationSlice';
+import { fetchRecruiterApplications, fetchAdminApplications } from '../redux/applicationSlice';
 import { fetchJobs } from '../redux/jobSlice';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
@@ -29,13 +29,23 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (user?.role === 'recruiter' || user?.role === 'admin') {
-      dispatch(fetchRecruiterApplications());
+      if (user?.role == "admin") {
+        dispatch(fetchAdminApplications());
+      }
+      else {
+        dispatch(fetchRecruiterApplications());
+      }
       dispatch(fetchJobs());
     }
   }, [dispatch, user]);
 
   // Stats
-  const jobCount = jobs?.filter((job) => job.postedBy === user._id).length || 0;
+  var jobCount;
+  if (user.role == "admin") {
+    jobCount = jobs.length || 0;
+  } else {
+    jobCount = jobs?.filter((job) => job.postedBy === user._id).length || 0;
+  }
   const stats = {
     Applied: applications.length,
     Shortlisted: applications.filter((a) => a.status === 'shortlisted').length,

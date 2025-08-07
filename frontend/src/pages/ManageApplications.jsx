@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
     fetchRecruiterApplications,
     updateApplicationStatus,
+    fetchAdminApplications
 } from '../redux/applicationSlice';
 import toast from 'react-hot-toast';
 import { FaDownload, FaExternalLinkAlt } from 'react-icons/fa';
@@ -19,13 +20,19 @@ const ManageApplications = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { applications, loading, error } = useSelector((state) => state.applications);
+    const { user } = useSelector((state) => state.auth);
 
     const [searchTerm, setSearchTerm] = useState('');
     const [statusFilter, setStatusFilter] = useState('all');
     const [jobFilter, setJobFilter] = useState('all');
 
     useEffect(() => {
-        dispatch(fetchRecruiterApplications());
+        if (user?.role == "admin") {
+            dispatch(fetchAdminApplications());
+        }
+        else {
+            dispatch(fetchRecruiterApplications());
+        }
     }, [dispatch]);
 
     const handleStatusChange = async (id, status) => {
@@ -44,7 +51,13 @@ const ManageApplications = () => {
         const nameMatch = app.name.toLowerCase().includes(searchTerm.toLowerCase());
         const emailMatch = app.email.toLowerCase().includes(searchTerm.toLowerCase());
         const statusMatch = statusFilter === 'all' || app.status === statusFilter;
-        const jobMatch = jobFilter === 'all' || app.jobId?.title === jobFilter;
+        var jobMatch;
+        if (app.jobId) {
+            jobMatch = jobFilter === 'all' || app.jobId?.title === jobFilter;
+        }
+        else {
+            jobMatch = jobFilter === 'all' || "Job has been deleted" === jobFilter;
+        }
         return (nameMatch || emailMatch) && statusMatch && jobMatch;
     });
 
@@ -115,7 +128,7 @@ const ManageApplications = () => {
                             </div>
 
                             <p className="text-gray-600 text-sm">
-                                For: <span className="font-medium">{app.jobId?.title}</span>
+                                For: <span className={`font-medium ${app.jobId ? "" : "text-red-500"}`}>{app.jobId ? app.jobId.title : "Job has been deleted"}</span>
                             </p>
 
                             <div className="flex justify-between items-center mt-3">
@@ -130,8 +143,7 @@ const ManageApplications = () => {
 
                                 <button
                                     onClick={() => navigate(`/application/${app._id}`)}
-                                    className="text-sm flex items-center gap-1 text-blue-600 hover:underline"
-                                >
+                                    className={`text-sm flex items-center gap-1 hover:underline ${app.jobId ? "text-blue-600 hover:cursor-pointer" : "text-red-700 line-through hover:opacity-0 hover:cursor-not-allowed"}`} disabled={app.jobId ? false : true}>
                                     View <FaExternalLinkAlt className="text-xs" />
                                 </button>
                             </div>

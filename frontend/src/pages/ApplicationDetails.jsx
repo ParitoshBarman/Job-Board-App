@@ -55,6 +55,10 @@ const ApplicationDetails = () => {
         return <div className="text-center mt-10 text-red-500">Application not found.</div>;
     }
 
+    if (!application.jobId) {
+        return <div className="text-center mt-10 text-red-500">Job has been deleted for this Application.</div>;
+    }
+
     const { jobId } = application;
 
     return (

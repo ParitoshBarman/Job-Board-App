@@ -25,8 +25,16 @@ const MyApplications = () => {
     }, [dispatch]);
 
     const filteredApplications = userApplications.filter(app => {
-        const titleMatch = app.jobId.title.toLowerCase().includes(searchTerm.toLowerCase());
-        const companyMatch = app.jobId.company.toLowerCase().includes(searchTerm.toLowerCase());
+        var titleMatch;
+        var companyMatch;
+        if (app.jobId) {
+            titleMatch = app.jobId.title.toLowerCase().includes(searchTerm.toLowerCase());
+            companyMatch = app.jobId.company.toLowerCase().includes(searchTerm.toLowerCase());
+        }
+        else {
+            titleMatch = "Job has been deleted".includes(searchTerm.toLowerCase());
+            companyMatch = "Job has been deleted".toLowerCase().includes(searchTerm.toLowerCase());
+        }
         const statusMatch = statusFilter === 'all' || app.status === statusFilter;
         return (titleMatch || companyMatch) && statusMatch;
     });
@@ -71,8 +79,8 @@ const MyApplications = () => {
                         >
                             {/* Job Info */}
                             <div>
-                                <h3 className="text-xl font-semibold text-indigo-700">{app.jobId.title}</h3>
-                                <p className="text-gray-600">{app.jobId.company}</p>
+                                <h3 className={`text-xl font-semibold ${app.jobId ? "text-indigo-700" : "text-red-700"}`}>{app.jobId ? app.jobId.title : "Job has been deleted"}</h3>
+                                <p className="text-gray-600">{app.jobId ? app.jobId.company : "Job has been deleted"}</p>
                                 <p className="text-sm text-gray-500">
                                     Applied {formatDistanceToNow(new Date(app.createdAt))} ago
                                 </p>
@@ -100,8 +108,7 @@ const MyApplications = () => {
 
                                 <button
                                     onClick={() => navigate(`/application/${app._id}`)}
-                                    className="text-sm flex items-center gap-1 text-blue-600 hover:underline"
-                                >
+                                    className={`text-sm flex items-center gap-1 hover:underline ${app.jobId ? "text-blue-600 hover:cursor-pointer" : "text-red-700 line-through hover:opacity-0 hover:cursor-not-allowed"}`} disabled={app.jobId ? false : true}>
                                     View Details <FaExternalLinkAlt className="text-xs" />
                                 </button>
                             </div>

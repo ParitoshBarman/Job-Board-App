@@ -130,7 +130,6 @@ const Apply = () => {
                                     type="file"
                                     name="resume"
                                     onChange={handleChange}
-                                    required
                                     className="hidden"
                                 />
                             </label>
@@ -147,7 +146,7 @@ const Apply = () => {
                         <button
                             type="submit"
                             disabled={submitting}
-                            className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2 rounded-md transition"
+                            className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2 rounded-md transition hover:cursor-pointer"
                         >
                             {submitting ? 'Submitting...' : 'Submit Application'}
                         </button>

@@ -153,7 +153,7 @@ const ManageApplications = () => {
                                     <button
                                         key={status}
                                         onClick={() => handleStatusChange(app._id, status)}
-                                        className={`text-xs px-3 py-1 rounded-full font-medium transition ${statusColors[status]} hover:opacity-90`}
+                                        className={`text-xs px-3 py-1 rounded-full font-medium transition ${statusColors[status]} hover:opacity-90 hover:cursor-pointer`}
                                     >
                                         {status}
                                     </button>

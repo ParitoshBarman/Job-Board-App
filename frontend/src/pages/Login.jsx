@@ -24,8 +24,8 @@ const Login = () => {
             dispatch(setCredentials(res.data));
 
             toast.success('Login successful!');
-            // navigate(res.data.role === 'recruiter' || res.data.role === 'admin' ? '/dashboard' : '/');
-            navigate('/');
+            navigate(res.data.role === 'admin' ? '/dashboard' : '/');
+            // navigate('/');
         } catch (err) {
             toast.error(err.response?.data?.message || 'Login failed');
         } finally {

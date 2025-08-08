@@ -94,6 +94,8 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 | **Register Form Validation** - Validation errors in register form | ![Register Form Validation](./screenshots/common/register_form_validation.png) |
 | **Toast Notifications** - Toast messages for various actions like login, logout, update, delete, reject, shortlist, edit, save, etc. | ![Toast Notifications](./screenshots/common/toast_message_for_every_action_login_loguot_update_delete_reject_shortlist_edit_save_etc.png) |
 
+---
+---
 
 ### **Job Seeker**
 | Description | Screenshot |
@@ -114,6 +116,8 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 | **My Applications Mobile** - My applications mobile view | ![My Applications Mobile](./screenshots/job_seeker/my_application_page_mobile_view.JPG) |
 | **Responsive Navbar Mobile** - Responsive navbar opened in mobile view | ![Responsive Navbar Mobile](./screenshots/job_seeker/candidate_responsive_navbar_open_mobile_view.JPG) |
 
+---
+---
 ### **Recruiter**
 | Description | Screenshot |
 |-------------|------------|
@@ -135,7 +139,8 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 | **Job Manage Mobile** - Job manage page mobile view | ![Job Manage Mobile](./screenshots/recruiter/recruiter_job_manage_page_mobile_view.JPG) |
 | **Responsive Navbar Mobile** - Responsive navbar on mobile | ![Responsive Navbar Mobile](./screenshots/recruiter/recruiter_home_page_responsive_navbar_mobile_view.JPG) |
 
-
+---
+---
 
 ### **Admin**
 | Description | Screenshot |

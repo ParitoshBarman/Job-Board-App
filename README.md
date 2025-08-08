@@ -98,21 +98,21 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 ### **Job Seeker**
 | Description | Screenshot |
 |-------------|------------|
-| **Home Job List Mobile** - Job list section in mobile view | ![Home Job List Mobile](./screenshots/job_seeker/candidate_home_job_list_section_mobile_view.JPG) |
-| **Home Job Search Mobile** - Job search & filter section in mobile view | ![Home Job Search Mobile](./screenshots/job_seeker/candidate_home_jobsearch_filter_section_mobile_view.JPG) |
-| **Home Mobile View** - Job seeker mobile home view | ![Home Mobile View](./screenshots/job_seeker/candidate_home_mobile_view.JPG) |
-| **Pie Chart Mobile** - Application status pie chart on mobile | ![Pie Chart Mobile](./screenshots/job_seeker/candidate_home_piechart_mobile_view.JPG) |
-| **Responsive Navbar Mobile** - Responsive navbar opened in mobile view | ![Responsive Navbar Mobile](./screenshots/job_seeker/candidate_responsive_navbar_open_mobile_view.JPG) |
-| **Application Details** - Detailed view of a job application | ![Application Details](./screenshots/job_seeker/job_seeker_application_details_page.png) |
 | **Home Page** - Job seeker dashboard with stats | ![Home Page](./screenshots/job_seeker/job_seeker_home_page.png) |
 | **Job Search Section 2** - Job search section with filters | ![Job Search Section 2](./screenshots/job_seeker/job_seeker_home_page_jobsearch_filter_section2.png) |
 | **Job Search with List** - Job search with job list results | ![Job Search with List](./screenshots/job_seeker/job_seeker_home_page_jobsearch_filter_section_with_job_list.png) |
 | **Apply Job Page** - Job application form | ![Apply Job Page](./screenshots/job_seeker/job_seeker_job_apply_page.png) |
-| **Apply Successful Popup** - Popup after successful job application | ![Apply Successful Popup](./screenshots/job_seeker/job_seeker_job_apply_successfull_and_redirect_popup.png) |
-| **Job Details Page** - Job details information | ![Job Details Page](./screenshots/job_seeker/job_seeker_job_details_page.png) |
 | **Job Listing Page** - All job listings page | ![Job Listing Page](./screenshots/job_seeker/job_seeker_job_listing_page.png) |
+| **Job Details Page** - Job details information | ![Job Details Page](./screenshots/job_seeker/job_seeker_job_details_page.png) |
+| **Apply Successful Popup** - Popup after successful job application | ![Apply Successful Popup](./screenshots/job_seeker/job_seeker_job_apply_successfull_and_redirect_popup.png) |
 | **My Applications** - My applications list | ![My Applications](./screenshots/job_seeker/job_seeker_my_application_page.png) |
+| **Application Details** - Detailed view of a job application | ![Application Details](./screenshots/job_seeker/job_seeker_application_details_page.png) |
+| **Home Mobile View** - Job seeker mobile home view | ![Home Mobile View](./screenshots/job_seeker/candidate_home_mobile_view.JPG) |
+| **Pie Chart Mobile** - Application status pie chart on mobile | ![Pie Chart Mobile](./screenshots/job_seeker/candidate_home_piechart_mobile_view.JPG) |
+| **Home Job Search Mobile** - Job search & filter section in mobile view | ![Home Job Search Mobile](./screenshots/job_seeker/candidate_home_jobsearch_filter_section_mobile_view.JPG) |
+| **Home Job List Mobile** - Job list section in mobile view | ![Home Job List Mobile](./screenshots/job_seeker/candidate_home_job_list_section_mobile_view.JPG) |
 | **My Applications Mobile** - My applications mobile view | ![My Applications Mobile](./screenshots/job_seeker/my_application_page_mobile_view.JPG) |
+| **Responsive Navbar Mobile** - Responsive navbar opened in mobile view | ![Responsive Navbar Mobile](./screenshots/job_seeker/candidate_responsive_navbar_open_mobile_view.JPG) |
 
 ### **Recruiter**
 | Description | Screenshot |
@@ -170,9 +170,16 @@ npm install
 
 #### Backend `.env` file
 ```env
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
 PORT=5000
+MONGO_URI=mongodb://localhost:27017/job-board
+JWT_SECRET=your_secret_key
+```
+
+#### Frontend `.env` file
+```env
+VITE_BASE_URL=http://localhost:5173
+VITE_API_URL=http://localhost:5000/api
+VITE_API_RESUME_URL=http://localhost:5000/api
 ```
 
 ### 4️⃣ Run the project

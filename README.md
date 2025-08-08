@@ -101,9 +101,9 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 | **Home Page** - Job seeker dashboard with stats | ![Home Page](./screenshots/job_seeker/job_seeker_home_page.png) |
 | **Job Search Section 2** - Job search section with filters | ![Job Search Section 2](./screenshots/job_seeker/job_seeker_home_page_jobsearch_filter_section2.png) |
 | **Job Search with List** - Job search with job list results | ![Job Search with List](./screenshots/job_seeker/job_seeker_home_page_jobsearch_filter_section_with_job_list.png) |
-| **Apply Job Page** - Job application form | ![Apply Job Page](./screenshots/job_seeker/job_seeker_job_apply_page.png) |
 | **Job Listing Page** - All job listings page | ![Job Listing Page](./screenshots/job_seeker/job_seeker_job_listing_page.png) |
 | **Job Details Page** - Job details information | ![Job Details Page](./screenshots/job_seeker/job_seeker_job_details_page.png) |
+| **Apply Job Page** - Job application form | ![Apply Job Page](./screenshots/job_seeker/job_seeker_job_apply_page.png) |
 | **Apply Successful Popup** - Popup after successful job application | ![Apply Successful Popup](./screenshots/job_seeker/job_seeker_job_apply_successfull_and_redirect_popup.png) |
 | **My Applications** - My applications list | ![My Applications](./screenshots/job_seeker/job_seeker_my_application_page.png) |
 | **Application Details** - Detailed view of a job application | ![Application Details](./screenshots/job_seeker/job_seeker_application_details_page.png) |
@@ -117,23 +117,23 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 ### **Recruiter**
 | Description | Screenshot |
 |-------------|------------|
-| **Application Details & Manage** - Recruiter managing a specific application | ![Application Details & Manage](./screenshots/recruiter/recruiter_application_details_and_manage_page.png) |
-| **Application Details Mobile** - Recruiter application details mobile view | ![Application Details Mobile](./screenshots/recruiter/recruiter_application_details_and_manage_page_mobile_view.JPG) |
-| **Manage Applications Page** - Manage applications table | ![Manage Applications Page](./screenshots/recruiter/recruiter_application_manage_page.png) |
-| **Manage Applications Mobile** - Manage applications mobile view | ![Manage Applications Mobile](./screenshots/recruiter/recruiter_application_manage_page_mobile_view.JPG) |
-| **Dashboard with Analytics** - Recruiter dashboard with charts | ![Dashboard with Analytics](./screenshots/recruiter/recruiter_dashboard_with_analytics_chart_and_manage_all_task.png) |
-| **Delete Job Confirmation** - Confirmation popup for job deletion | ![Delete Job Confirmation](./screenshots/recruiter/recruiter_delete_job_confirmation.png) |
-| **Edit Job Popup** - Popup form for editing job details | ![Edit Job Popup](./screenshots/recruiter/recruiter_edit_job_popup_after_clicking_edit_option.png) |
 | **Recruiter Home** - Recruiter dashboard home | ![Recruiter Home](./screenshots/recruiter/recruiter_home_page.png) |
-| **Home Charts Mobile** - Recruiter dashboard charts in mobile view | ![Home Charts Mobile](./screenshots/recruiter/recruiter_home_page_charts_status_count_mobile_view.JPG) |
 | **Manage Jobs Filter** - Manage jobs with filter options | ![Manage Jobs Filter](./screenshots/recruiter/recruiter_home_page_job_manage_filter.png) |
 | **Manage Jobs List** - Job list management view | ![Manage Jobs List](./screenshots/recruiter/recruiter_home_page_job_manage_job_list.png) |
-| **Manage Jobs Mobile** - Manage jobs in mobile view | ![Manage Jobs Mobile](./screenshots/recruiter/recruiter_home_page_job_manage_mobile_view.JPG) |
-| **Home Mobile** - Recruiter home page mobile view | ![Home Mobile](./screenshots/recruiter/recruiter_home_page_mobile_view.JPG) |
-| **Responsive Navbar Mobile** - Responsive navbar on mobile | ![Responsive Navbar Mobile](./screenshots/recruiter/recruiter_home_page_responsive_navbar_mobile_view.JPG) |
-| **Job Manage Page** - All job manage page | ![Job Manage Page](./screenshots/recruiter/recruiter_job_manage_page.png) |
-| **Job Manage Mobile** - Job manage page mobile view | ![Job Manage Mobile](./screenshots/recruiter/recruiter_job_manage_page_mobile_view.JPG) |
+| **Dashboard with Analytics** - Recruiter dashboard with charts | ![Dashboard with Analytics](./screenshots/recruiter/recruiter_dashboard_with_analytics_chart_and_manage_all_task.png) |
 | **Job Posting Popup** - Popup for posting new jobs | ![Job Posting Popup](./screenshots/recruiter/recruiter_job_posting_or_job_create_popup_from_dashboard.png) |
+| **Manage Applications Page** - Manage applications table | ![Manage Applications Page](./screenshots/recruiter/recruiter_application_manage_page.png) |
+| **Application Details & Manage** - Recruiter managing a specific application | ![Application Details & Manage](./screenshots/recruiter/recruiter_application_details_and_manage_page.png) |
+| **Job Manage Page** - All job manage page | ![Job Manage Page](./screenshots/recruiter/recruiter_job_manage_page.png) |
+| **Edit Job Popup** - Popup form for editing job details | ![Edit Job Popup](./screenshots/recruiter/recruiter_edit_job_popup_after_clicking_edit_option.png) |
+| **Delete Job Confirmation** - Confirmation popup for job deletion | ![Delete Job Confirmation](./screenshots/recruiter/recruiter_delete_job_confirmation.png) |
+| **Home Mobile** - Recruiter home page mobile view | ![Home Mobile](./screenshots/recruiter/recruiter_home_page_mobile_view.JPG) |
+| **Home Charts Mobile** - Recruiter dashboard charts in mobile view | ![Home Charts Mobile](./screenshots/recruiter/recruiter_home_page_charts_status_count_mobile_view.JPG) |
+| **Manage Applications Mobile** - Manage applications mobile view | ![Manage Applications Mobile](./screenshots/recruiter/recruiter_application_manage_page_mobile_view.JPG) |
+| **Application Details Mobile** - Recruiter application details mobile view | ![Application Details Mobile](./screenshots/recruiter/recruiter_application_details_and_manage_page_mobile_view.JPG) |
+| **Manage Jobs Mobile** - Manage jobs in mobile view | ![Manage Jobs Mobile](./screenshots/recruiter/recruiter_home_page_job_manage_mobile_view.JPG) |
+| **Job Manage Mobile** - Job manage page mobile view | ![Job Manage Mobile](./screenshots/recruiter/recruiter_job_manage_page_mobile_view.JPG) |
+| **Responsive Navbar Mobile** - Responsive navbar on mobile | ![Responsive Navbar Mobile](./screenshots/recruiter/recruiter_home_page_responsive_navbar_mobile_view.JPG) |
 
 
 

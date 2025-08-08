@@ -163,7 +163,7 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 
 ## 📸 Screenshots
 
-### **Common**
+## **Common**
 | Description | Screenshot |
 |-------------|------------|
 | **Login Page** - Login page for all roles | ![Login Page](./screenshots/common/login.png) |
@@ -175,7 +175,7 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 ---
 ---
 
-### **Job Seeker**
+## **Job Seeker**
 | Description | Screenshot |
 |-------------|------------|
 | **Home Page** - Job seeker dashboard with stats | ![Home Page](./screenshots/job_seeker/job_seeker_home_page.png) |
@@ -196,7 +196,7 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 
 ---
 ---
-### **Recruiter**
+## **Recruiter**
 | Description | Screenshot |
 |-------------|------------|
 | **Recruiter Home** - Recruiter dashboard home | ![Recruiter Home](./screenshots/recruiter/recruiter_home_page.png) |
@@ -220,7 +220,7 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 ---
 ---
 
-### **Admin**
+## **Admin**
 | Description | Screenshot |
 |-------------|------------|
 | **Admin Dashboard - Full Access** - Admin dashboard with full control over all features | ![Admin Dashboard - Full Access](./screenshots/admin/admin_dashboard_access_for_all_and_everything.png) |

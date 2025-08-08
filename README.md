@@ -25,7 +25,7 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 
 ---
 
-## 🛠 Tech Stack
+<!-- ## 🛠 Tech Stack
 
 ### **Frontend**
 - React.js
@@ -53,11 +53,20 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 - Nodemon (Development)
 - Git & GitHub (Version Control)
 - Render (Backend Hosting)
-- Netlify (Frontend Hosting)
+- Netlify (Frontend Hosting) -->
+
+## 🛠 Tech Stack
+
+| Layer / Purpose | Technologies & Why |
+|-----------------|--------------------|
+| **🎨 Frontend** | ⚛ **React.js** – Component-based UI for reusability and scalability <br> 🎯 **Redux Toolkit** – Simplified global state management with less boilerplate <br> 🎨 **TailwindCSS** – Utility-first CSS for fast and responsive styling <br> 🌐 **React Router DOM** – Client-side routing with role-based access control <br> 📊 **Chart.js + React-Chartjs-2** – Data visualization for analytics dashboards <br> ✅ **Formik + Yup** – Easy and scalable form handling with validation <br> 🔔 **React Hot Toast** – Elegant toast notifications for better UX <br> 🎭 **Framer Motion** – Smooth animations and UI transitions <br> 🖼 **Lucide React Icons** – Modern and lightweight icon set |
+| **⚙ Backend** | 🟢 **Node.js** – JavaScript runtime for server-side development <br> 🚀 **Express.js** – Lightweight and flexible web framework for building REST APIs <br> 🔐 **JSON Web Token (JWT)** – Secure authentication and authorization <br> 🔑 **Bcrypt.js** – Password hashing for enhanced security <br> 📂 **Multer** – File upload handling for resumes <br> 🌐 **CORS** – Enable secure cross-origin requests <br> ⚙ **Dotenv** – Manage environment variables securely |
+| **🗄 Database** | 🍃 **MongoDB** – NoSQL database for flexible and scalable data storage <br> 📦 **Mongoose** – ODM for MongoDB with schema-based modeling |
+| **🛠 Tools & Build** | ⚡ **Vite** – Lightning-fast frontend build tool <br> 🔄 **Nodemon** – Auto-reloads backend server during development <br> 🗂 **Git & GitHub** – Version control and collaboration <br> ☁ **Render** – Cloud hosting for backend APIs <br> ☁ **Netlify** – Cloud hosting for frontend |
 
 ---
 
-## ✨ Features
+<!-- ## ✨ Features
 
 ### **Common Features**
 - Role-based Authentication (Admin, Recruiter, Job Seeker)
@@ -79,7 +88,76 @@ Built with **React.js + TailwindCSS** for the frontend, **Node.js + Express.js**
 
 ### **Admin**
 - Full control over all jobs and applications
-- Access to analytics dashboard
+- Access to analytics dashboard -->
+
+
+## ✨ Features
+
+| Category | Features |
+|----------|----------|
+| **🌐 Common** | 🔑 Role-based Authentication (Admin, Recruiter, Job Seeker) <br> 🛠 Role-based Rendering & Routing <br> ✅ Form Validation with Yup + Formik <br> 🔔 Toast notifications for all actions <br> 📱 Fully Responsive Design (Mobile + Desktop) |
+| **👨‍💼 Job Seeker** | 🔍 Browse & filter jobs <br> 📄 Apply with resume upload <br> 📊 Track application status with charts <br> 📱 Mobile-friendly dashboard |
+| **🏢 Recruiter** | ➕ Post, edit, and delete jobs <br> 📑 Manage job applications <br> 📈 View analytics dashboard with charts <br> 📱 Optimized mobile views |
+| **🛡 Admin** | 🏆 Full control over all jobs and applications <br> 📊 Access complete analytics dashboard |
+
+---
+
+### 🔹 Additional Highlights
+- 🔍 **Advanced Search** – Search with keyword, location, category, and filters (date posted, salary range, job type)  
+- 📤 **File Upload Handling** – Secure resume upload & storage (Multer + MongoDB reference)  
+- 📊 **Data Visualization** – Application status charts (Chart.js)  
+- 🔐 **Protected Routes** – Client-side route protection with role-based access  
+<!-- - ⚡ **Debounced Search** – Optimized search queries for better performance   -->
+- ♻ **Persistent State** – State management via Redux Toolkit & local storage  
+- 🚀 **Deployment Ready** – Backend hosted on Render, Frontend on Netlify, with environment variables for both  
+- 📡 **API Integration** – Axios instance with interceptors for token handling  
+<!-- - 🧪 **Testing** (optional) – Unit & integration tests with Jest/React Testing Library   -->
+
+
+---
+
+---
+
+## 🚀 Routes Overview
+
+### 🔐 Auth Routes
+**POST** `/api/auth/login` – Login user (Admin, Recruiter, Job Seeker)  
+**POST** `/api/auth/register` – Register a new user  
+
+---
+
+### 📄 Job Routes
+**GET** `/api/jobs` – Get all jobs (Authenticated users)  
+**GET** `/api/jobs/:id` – Get job details by ID (Public)  
+**POST** `/api/jobs` – Create a new job (Admin, Recruiter only)  
+**PUT** `/api/jobs/:id` – Update job details (Admin, Recruiter only)  
+**DELETE** `/api/jobs/:id` – Delete a job (Admin, Recruiter only)  
+
+---
+
+### 📩 Application Routes
+**POST** `/api/apply/:jobId` – Apply to a job (Job Seeker only) with resume upload  
+**GET** `/api/apply/me` – Get my applications (Job Seeker only)  
+**GET** `/api/apply/recruiter` – Get applications for recruiter's jobs (Recruiter only)  
+**GET** `/api/apply/admin` – Get all applications (Admin only)  
+**PATCH** `/api/apply/:id/status` – Update application status (Admin, Recruiter only)  
+**GET** `/api/apply/:id` – Get application details (Admin, Recruiter, Job Seeker)  
+
+---
+
+## 🖥 Frontend Routes
+
+**/** – Home (Protected: Admin, Recruiter, Job Seeker)  
+**/jobs** – Browse jobs (Public)  
+**/job-details/:id** – View job details (Public)  
+**/apply/:jobId** – Apply for a job (Job Seeker)  
+**/login** – Login page (Public)  
+**/register** – Register page (Public)  
+**/dashboard** – Dashboard with analytics (Admin, Recruiter)  
+**/manage-applications** – Manage all applications (Admin, Recruiter)  
+**/my-applications** – My applications list (Job Seeker)  
+**/application/:id** – Application details (Admin, Recruiter, Job Seeker)  
+
 
 ---
 
@@ -282,45 +360,6 @@ Job Board App
 │   │       └── axios.js
 │   └── vite.config.js
 ```
-
 ---
-
-## 🚀 Routes Overview
-
-### 🔐 Auth Routes
-**POST** `/api/auth/login` – Login user (Admin, Recruiter, Job Seeker)  
-**POST** `/api/auth/register` – Register a new user  
-
 ---
-
-### 📄 Job Routes
-**GET** `/api/jobs` – Get all jobs (Authenticated users)  
-**GET** `/api/jobs/:id` – Get job details by ID (Public)  
-**POST** `/api/jobs` – Create a new job (Admin, Recruiter only)  
-**PUT** `/api/jobs/:id` – Update job details (Admin, Recruiter only)  
-**DELETE** `/api/jobs/:id` – Delete a job (Admin, Recruiter only)  
-
----
-
-### 📩 Application Routes
-**POST** `/api/apply/:jobId` – Apply to a job (Job Seeker only) with resume upload  
-**GET** `/api/apply/me` – Get my applications (Job Seeker only)  
-**GET** `/api/apply/recruiter` – Get applications for recruiter's jobs (Recruiter only)  
-**GET** `/api/apply/admin` – Get all applications (Admin only)  
-**PATCH** `/api/apply/:id/status` – Update application status (Admin, Recruiter only)  
-**GET** `/api/apply/:id` – Get application details (Admin, Recruiter, Job Seeker)  
-
----
-
-## 🖥 Frontend Routes
-
-**/** – Home (Protected: Admin, Recruiter, Job Seeker)  
-**/jobs** – Browse jobs (Public)  
-**/job-details/:id** – View job details (Public)  
-**/apply/:jobId** – Apply for a job (Job Seeker)  
-**/login** – Login page (Public)  
-**/register** – Register page (Public)  
-**/dashboard** – Dashboard with analytics (Admin, Recruiter)  
-**/manage-applications** – Manage all applications (Admin, Recruiter)  
-**/my-applications** – My applications list (Job Seeker)  
-**/application/:id** – Application details (Admin, Recruiter, Job Seeker)  
+**Made with ❤️ by Paritosh Barman**
